@@ -2,7 +2,7 @@ from fastapi import Depends, FastAPI
 from fastapi.testclient import TestClient
 from rsserpent.model.rss import Feed
 
-from rsserpent_plugin_example import plugin
+from rsserpent_plugin_bilibili import plugin
 
 
 app = FastAPI()

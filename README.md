@@ -1,4 +1,4 @@
-# rsserpent-plugin-example
+# rsserpent-plugin-bilibili
 
 [![python: 3.7+](https://img.shields.io/badge/python-^3.7-blue.svg)](https://www.python.org/downloads/)
 [![mypy: checked](http://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
@@ -6,4 +6,4 @@
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/RSSerpent/rsserpent-plugin-example/master.svg)](https://results.pre-commit.ci/latest/github/RSSerpent/rsserpent-plugin-example/master)
 [![codecov](https://codecov.io/gh/RSSerpent/rsserpent-plugin-example/branch/master/graph/badge.svg?token=J3YX7S75GW)](https://codecov.io/gh/RSSerpent/rsserpent-plugin-example)
 
-This is an example plugin for RSSerpent.
+Bilibili up 主最新视频订阅
