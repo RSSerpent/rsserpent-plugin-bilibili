@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "rsserpent-plugin-example"
-version = "0.0.0"
-description = "An example plugin for RSSerpent 🐍"
+name = "rsserpent-plugin-bilibili"
+version = "0.0.1"
+description = "Bilibili subscriber"
 authors = ["Queensferry <queensferry.me@gmail.com>"]
 license = "MIT"
 
@@ -28,7 +28,7 @@ lines_after_imports = 2
 profile = "black"
 
 [tool.poetry.plugins."rsserpent.plugins"]
-"example" = "rsserpent_plugin_example:plugin"
+"bilibili" = "rsserpent_plugin_bilibili:plugin"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
