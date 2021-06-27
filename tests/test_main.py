@@ -20,4 +20,4 @@ for path, provider in plugin.routers.items():
 def test() -> None:
     """Test if each router works properly (returns 200)."""
     for path in plugin.routers:
-        assert client.get(path).status_code == 200
+        assert client.get(path.format(uid=13164144)).status_code == 200
