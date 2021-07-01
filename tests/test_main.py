@@ -12,7 +12,7 @@ client = TestClient(app)
 for path, provider in plugin.routers.items():
 
     @app.get(path)
-    def router(data: dict = Depends(provider)) -> Feed:  # type: ignore
+    def router(data: dict = Depends(provider)) -> Feed:
         """Define an example router."""
         return Feed(**data)
 

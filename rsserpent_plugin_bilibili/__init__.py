@@ -11,9 +11,7 @@ author = Persona(
 
 plugin = Plugin(
     name="rsserpent-plugin-bilibili",
-    description="Bilibili subscriber.",
     author=author,
-    maintainers=[author],
     prefix="/bilibili",
     repository="https://github.com/RSSerpent/rsserpent-plugin-bilibili",
     routers={video.path: video.provider},

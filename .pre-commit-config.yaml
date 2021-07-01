@@ -25,7 +25,10 @@ repos:
         # As `mypy` runs in an isolated environment, it is necessary to manually specify
         # some libraries of the current (poetry) environment for `mypy` to work properly.
         additional_dependencies:
-          - pydantic
+          - fastapi
+          - pyquery
+          - pytest
+          - rsserpent
           - types-requests
   - repo: https://github.com/PyCQA/flake8
     rev: 3.9.2
