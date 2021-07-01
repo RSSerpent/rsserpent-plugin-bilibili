@@ -22,6 +22,8 @@ repos:
     hooks:
       - id: mypy
         name: Type Check
+        # As `mypy` runs in an isolated environment, it is necessary to manually specify
+        # some libraries of the current (poetry) environment for `mypy` to work properly.
         additional_dependencies:
           - pydantic
           - types-requests

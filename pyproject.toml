@@ -21,11 +21,21 @@ pytest-cov = "^2.12.1"
 include = '\.pyi?$'
 target-version = ["py36", "py37", "py38", "py39"]
 
+[tool.coverage.run]
+include = ["rsserpent_plugin_bilibili/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "if TYPE_CHECKING:",
+    "pragma: no cover"
+]
+
 [tool.isort]
 balanced_wrapping = true
 combine_as_imports = true
 lines_after_imports = 2
 profile = "black"
+src_paths = ["rsserpent_plugin_bilibili", "tests"]
 
 [tool.poetry.plugins."rsserpent.plugins"]
 "bilibili" = "rsserpent_plugin_bilibili:plugin"

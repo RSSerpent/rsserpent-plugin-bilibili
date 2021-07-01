@@ -1,8 +1,9 @@
 # IDE
-.vscode/
 .idea/
+.vscode/
 
 # Misc
+.envrc
 __pycache__/
 
 # Test
