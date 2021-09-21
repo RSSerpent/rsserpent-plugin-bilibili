@@ -1,0 +1,16 @@
+[flake8]
+count = true
+ignore =
+    # D100: missing docstring in public module
+    D100,
+    # D104: missing docstring in public package
+    D104
+max-complexity = 6
+max-line-length = 88
+
+## darglint
+strictness = long
+docstring-style = google
+
+## flake8-docstrings
+docstring-convention = google

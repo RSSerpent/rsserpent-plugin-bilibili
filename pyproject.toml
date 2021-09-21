@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "rsserpent-plugin-bilibili"
+version = "0.1.0"
+
+authors = ["creedowl <creedowl@gmail.com>"]
+description = "An rsserpent plugin for bilibili.com."
+keywords = ["rss"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.6.2"
+rsserpent = "^0.1.3"
+
+[tool.poetry.dev-dependencies]
+pre-commit = "^2.15.0"
+uvicorn = "^0.15.0"
+# testing
+pytest = "^6.2.4"
+pytest-asyncio = "^0.15.1"
+pytest-cov = "^2.12.1"
+pytest-randomly = "^3.10.1"
+pytest-xdist = "^2.3.0"
+
+[tool.poetry.plugins."rsserpent.plugin"]
+"bilibili" = "rsserpent_plugin_bilibili:plugin"
+
+[tool.black]
+include = '\.pyi?$'
+target-version = ["py36", "py37", "py38", "py39"]
+
+[tool.coverage.run]
+include = ["rsserpent_plugin_bilibili/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "if TYPE_CHECKING:",
+    "pragma: no cover"
+]
+
+[tool.isort]
+balanced_wrapping = true
+combine_as_imports = true
+lines_after_imports = 2
+profile = "black"
+
+[tool.nitpick]
+style = "gh://rsserpent/rsserpent/styles/main.toml"
+cache = "1 day"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

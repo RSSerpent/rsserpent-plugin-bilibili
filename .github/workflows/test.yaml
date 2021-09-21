@@ -1,0 +1,51 @@
+name: Test
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/test.yaml'
+      - 'poetry.lock'
+      - 'rsserpent_plugin_bilibili/**'
+      - 'tests/**'
+  push:
+    branches:
+      - 'master'
+    paths:
+      - '.github/workflows/test.yaml'
+      - 'poetry.lock'
+      - 'rsserpent_plugin_bilibili/**'
+      - 'tests/**'
+    tags-ignore:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+            .venv
+          key: ${{ matrix.python-version }}-${{ hashFiles('poetry.lock') }}
+      - name: "Setup Poetry"
+        run: |
+          pip install --upgrade pip
+          pip install --user poetry
+          poetry install
+      - name: "Generate Coverage Report"
+        run: poetry run pytest --cov --cov-report=xml -n auto
+      # - name: "Upload to Codecov.io"
+      #   if: github.repository == 'creedowl/rsserpent-plugin-bilibili' && github.event_name != 'pull_request'
+      #   uses: codecov/codecov-action@v2
+      #   with:
+      #     fail_ci_if_error: true
