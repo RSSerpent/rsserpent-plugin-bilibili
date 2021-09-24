@@ -45,7 +45,7 @@ lines_after_imports = 2
 profile = "black"
 
 [tool.nitpick]
-style = "gh://rsserpent/rsserpent/styles/main.toml"
+style = "https://raw.githubusercontent.com/RSSerpent/RSSerpent/master/styles/main.toml"
 cache = "1 day"
 
 [build-system]
