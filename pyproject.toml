@@ -20,7 +20,7 @@ pytest = "^6.2.4"
 pytest-asyncio = "^0.15.1"
 pytest-cov = "^2.12.1"
 pytest-randomly = "^3.10.1"
-pytest-xdist = "^2.3.0"
+pytest-xdist = "^2.4.0"
 
 [tool.poetry.plugins."rsserpent.plugin"]
 "bilibili" = "rsserpent_plugin_bilibili:plugin"
