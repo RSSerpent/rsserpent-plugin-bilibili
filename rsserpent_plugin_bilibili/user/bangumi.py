@@ -11,7 +11,10 @@ path = "/bilibili/user/{uid}/bangumi"
 async def provider(uid: int) -> Dict[str, Any]:
     """订阅用户追番列表."""
     user_info_api = f"https://api.bilibili.com/x/space/acc/info?mid={uid}&jsonp=jsonp"
-    bangumi_list_api = f"https://api.bilibili.com/x/space/bangumi/follow/list?type=1&follow_status=0&pn=1&ps=30&vmid={uid}"
+    bangumi_list_api = (
+        "https://api.bilibili.com/x/space/bangumi/follow/list?type=1"
+        f"&follow_status=0&pn=1&ps=30&vmid={uid}"
+    )
 
     async with HTTPClient() as client:
         user_info = (await client.get(user_info_api)).json()
