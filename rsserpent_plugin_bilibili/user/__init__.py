@@ -1,4 +1,4 @@
-from . import video
+from . import video, bangumi
 
 
-__all__ = ("video",)
+__all__ = ("video", "bangumi",)
