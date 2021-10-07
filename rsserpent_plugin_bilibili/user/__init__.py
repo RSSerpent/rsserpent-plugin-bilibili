@@ -1,7 +1,7 @@
-from . import video, bangumi
+from . import bangumi, video
 
 
 __all__ = (
-    "video",
     "bangumi",
+    "video",
 )
