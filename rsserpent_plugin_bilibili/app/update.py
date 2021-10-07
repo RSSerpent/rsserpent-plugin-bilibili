@@ -4,11 +4,13 @@ import arrow
 from rsserpent.utils import HTTPClient, cached
 
 
-platform_trans = {"android": "安卓版",
-                  "iphone": "iPhone 版",
-                  "ipad": "iPad HD 版",
-                  "win": "UWP 版",
-                  "android_tv_yst": "TV 版"}
+platform_trans = {
+    "android": "安卓版",
+    "iphone": "iPhone 版",
+    "ipad": "iPad HD 版",
+    "win": "UWP 版",
+    "android_tv_yst": "TV 版",
+}
 path = "/bilibili/app/update/{platform}"
 
 
