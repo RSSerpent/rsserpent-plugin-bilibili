@@ -1,6 +1,6 @@
 from rsserpent.models import Persona, Plugin
 
-from . import user
+from . import app, user
 
 
 plugin = Plugin(
@@ -12,5 +12,8 @@ plugin = Plugin(
     ),
     prefix="/bilibili",
     repository="https://github.com/creedowl/rsserpent-plugin-bilibili",
-    routers={user.video.path: user.video.provider},
+    routers={
+        user.video.path: user.video.provider,
+        app.update.path: app.update.provider,
+    },
 )
