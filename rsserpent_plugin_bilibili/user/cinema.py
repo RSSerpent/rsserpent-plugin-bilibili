@@ -1,7 +1,9 @@
 from typing import Any, Dict
+
 from rsserpent.utils import cached
 
 from .bangumi import provider_base
+
 
 path = "/bilibili/user/{uid}/cinema"
 
