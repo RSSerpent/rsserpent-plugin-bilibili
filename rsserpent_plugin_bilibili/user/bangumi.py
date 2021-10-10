@@ -9,10 +9,16 @@ path = "/bilibili/user/{uid}/bangumi"
 
 @cached
 async def provider(uid: int) -> Dict[str, Any]:
-    """订阅用户追番列表."""
+    """当前路由调用封装."""
+    type_info = {"id": 1, "name": "bangumi", "name_zh": "追番"}
+    return await provider_base(uid, type_info)
+
+
+async def provider_base(uid: int, typea: Dict[str, Any]) -> Dict[str, Any]:
+    """订阅用户追番/追剧列表."""
     user_info_api = f"https://api.bilibili.com/x/space/acc/info?mid={uid}&jsonp=jsonp"
     bangumi_list_api = (
-        "https://api.bilibili.com/x/space/bangumi/follow/list?type=1"
+        f"https://api.bilibili.com/x/space/bangumi/follow/list?type={typea['id']}"
         f"&follow_status=0&pn=1&ps=30&vmid={uid}"
     )
 
@@ -23,8 +29,8 @@ async def provider(uid: int) -> Dict[str, Any]:
     username = user_info["data"]["name"]
 
     return {
-        "title": f"{username} 的追番列表",
-        "link": f"https://space.bilibili.com/{uid}/bangumi",
+        "title": f"{username} 的{typea['name_zh']}列表",
+        "link": f"https://space.bilibili.com/{uid}/{typea['name']}",
         "description": user_info["data"]["sign"],
         "items": [
             {
