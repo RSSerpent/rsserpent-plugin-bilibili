@@ -14,6 +14,8 @@ plugin = Plugin(
     repository="https://github.com/creedowl/rsserpent-plugin-bilibili",
     routers={
         user.video.path: user.video.provider,
+        user.bangumi.path: user.bangumi.provider,
+        user.cinema.path: user.cinema.provider,
         app.update.path: app.update.provider,
     },
 )
