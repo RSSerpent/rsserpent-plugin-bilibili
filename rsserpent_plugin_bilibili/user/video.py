@@ -31,7 +31,7 @@ async def provider(uid: int) -> Dict[str, Any]:
                 "title": item["title"],
                 "description": item["description"],
                 "link": f"https://www.bilibili.com/video/{item['bvid']}",
-                "pubDate": arrow.get(item["created"]),
+                "pub_date": arrow.get(item["created"]),
                 "author": username,
             }
             for item in video_list["data"]["list"]["vlist"]
