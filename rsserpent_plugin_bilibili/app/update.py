@@ -31,7 +31,7 @@ async def provider(platform: str) -> Dict[str, Any]:
                 "title": item["version"],
                 "description": item["desc"],
                 "link": "https://app.bilibili.com",
-                "pubDate": arrow.get(item["ptime"]),
+                "pub_date": arrow.get(item["ptime"]),
             }
             for item in update_info["data"]
         ],

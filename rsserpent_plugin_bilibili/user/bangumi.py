@@ -37,7 +37,7 @@ async def provider_base(uid: int, typea: Dict[str, Any]) -> Dict[str, Any]:
                 "title": f"{item['new_ep']['index_show']} - {item['title']}",
                 "description": item["evaluate"],
                 "link": f"https://www.bilibili.com/bangumi/play/ss{item['season_id']}",
-                "pubDate": arrow.get(
+                "pub_date": arrow.get(
                     item["new_ep"]["pub_time"]
                     if len(item["new_ep"]) > 1
                     else item["publish"]["pub_time"]
